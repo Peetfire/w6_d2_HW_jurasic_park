@@ -3,14 +3,16 @@ const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
+  
+  let myPark;
 
   beforeEach(function () {
-
+    myPark = new Park("Isla Nublar")
   })
 
   it('should have a name', function() {
     const actual = park.getName();
-    assert.strictEqual(actual, "anklosaurus");
+    assert.strictEqual(actual, "Isla Nublar");
   });
 
   it('should have a ticket price');
