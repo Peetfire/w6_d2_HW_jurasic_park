@@ -22,5 +22,19 @@ Park.prototype.removeDinosaur = function(dinosaur){
         this.dinosuars.splice(myIndex, 1);
     }
 }
+Park.prototype.findTopDino = function(){
+    let topDino = null;
+    for(let dinosaur of this.dinosuars){
+        if(topDino === null){
+            topDino = dinosaur;
+        }
+        else {
+            if(dinosaur.guestsAttractedPerDay > topDino.guestsAttractedPerDay){
+                topDino = dinosaur;
+            }
+        }
+    }
+    return topDino;
+}
 
 module.exports = Park;

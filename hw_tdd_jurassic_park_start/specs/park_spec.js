@@ -11,7 +11,7 @@ describe('Park', function() {
     dino2 = new Dinosaur("Paralofosaurus", "herbivore", 19);
     dino3 = new Dinosaur("Velocoraptor", "carnivore", 35);
     dino4 = new Dinosaur("Sarcosucus", "carnivore", 23);
-    dino5 = new Dinosaur("Gallimimus", "omnivore", 35);
+    dino5 = new Dinosaur("Gallimimus", "omnivore", 30);
     dino6 = new Dinosaur("Shuvuuia", "omnivore", 13);
     dinoArray = [dino1, dino2, dino3, dino4, dino5, dino6]
     dino7 = new Dinosaur("Allosaurus", "carnivore", 30);
@@ -45,7 +45,10 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, 6);
   });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function(){
+    const actual = myPark.findTopDino();
+    assert.deepStrictEqual(actual, dino3)
+  });
 
   it('should be able to find all dinosaurs of a particular species');
 
