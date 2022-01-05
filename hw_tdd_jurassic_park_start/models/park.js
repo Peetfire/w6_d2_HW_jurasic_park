@@ -65,5 +65,13 @@ Park.prototype.getYearlyRevenue = function(){
 Park.prototype.removeSpecies = function(species){
     this.dinosaurs = this.dinosaurs.filter(dinosaur => dinosaur.species !== species);
 }
+Park.prototype.getTotalDinosPerDietType = function(){
+    const totalDinosByDiet = {
+        herbivores: this.findDinoByType("herbivore").length,
+        carnivores: this.findDinoByType("carnivore").length,
+        omnivores: this.findDinoByType("omnivore").length
+    }
+    return totalDinosByDiet;
+}
 
 module.exports = Park;

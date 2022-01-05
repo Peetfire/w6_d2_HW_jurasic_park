@@ -80,4 +80,10 @@ describe('Park', function() {
     assert.strictEqual(actual, 5);
   })
 
+  it('should be able to provide an object of diet types and the number of dinosaurs per type', function(){
+    const actual = myPark.getTotalDinosPerDietType();
+    const expected = {herbivores: 2, carnivores: 2, omnivores: 2};
+    assert.deepStrictEqual(actual, expected);
+  })
+
 });
