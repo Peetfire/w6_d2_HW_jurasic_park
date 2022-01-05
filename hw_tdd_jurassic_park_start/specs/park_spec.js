@@ -8,7 +8,10 @@ describe('Park', function() {
 
   })
 
-  it('should have a name');
+  it('should have a name', function() {
+    const actual = park.getName();
+    assert.strictEqual(actual, "anklosaurus");
+  });
 
   it('should have a ticket price');
 
