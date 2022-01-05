@@ -52,5 +52,10 @@ Park.prototype.getAverageDailyVisitors = function(){
     }
     return total;
 }
+Park.prototype.getAverageYearlyVisitors = function(){
+    const daysOpen = 365;
+    const dailyVisitors = this.getAverageDailyVisitors();
+    return daysOpen * dailyVisitors;
+}
 
 module.exports = Park;
