@@ -11,7 +11,7 @@ describe('Park', function() {
   })
 
   it('should have a name', function() {
-    const actual = park.getName();
+    const actual = myPark.getName();
     assert.strictEqual(actual, "Isla Nublar");
   });
 
