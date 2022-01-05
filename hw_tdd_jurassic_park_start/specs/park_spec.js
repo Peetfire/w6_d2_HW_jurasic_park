@@ -4,7 +4,7 @@ const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
   
-  let myPark, dinoArray, dino1, dino2, dino3, dino4, dino5, dino6;
+  let myPark, dinoArray, dino1, dino2, dino3, dino4, dino5, dino6, dino7;
 
   beforeEach(function () {
     dino1 = new Dinosaur("Anklosaurus", "herbivore", 28);
@@ -14,6 +14,7 @@ describe('Park', function() {
     dino5 = new Dinosaur("Gallimimus", "omnivore", 35);
     dino6 = new Dinosaur("Shuvuuia", "omnivore", 13);
     dinoArray = [dino1, dino2, dino3, dino4, dino5, dino6]
+    dino7 = new Dinosaur("Allosaurus", "carnivore", 30);
     myPark = new Park("Isla Nublar", 50, dinoArray)
   })
 
@@ -28,11 +29,15 @@ describe('Park', function() {
   });
 
   it('should have a collection of dinosaurs', function(){
-    const actual = myPark.getDinosaurs();
-    assert.deepStrictEqual(actual, dinoArray);
+    const actual = myPark.getDinosaurs().length;
+    assert.deepStrictEqual(actual, 6);
   });
 
-  it('should be able to add a dinosaur to its collection');
+  it('should be able to add a dinosaur to its collection', function(){
+    myPark.addDinosaur(dino7);
+    const actual = myPark.getDinosaurs().length;
+    assert.deepStrictEqual(actual, 7);
+  });
 
   it('should be able to remove a dinosaur from its collection');
 
