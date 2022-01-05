@@ -72,4 +72,12 @@ describe('Park', function() {
     assert.strictEqual(actual, expected);
   });
 
+  it('should be able to remove all dinosaurs of a particular species', function(){
+    myPark.addDinosaur(dino5);
+    myPark.addDinosaur(dino5);
+    myPark.removeSpecies("Gallimimus");
+    const actual = myPark.getDinosaurs().length;
+    assert.strictEqual(actual, 5);
+  })
+
 });
