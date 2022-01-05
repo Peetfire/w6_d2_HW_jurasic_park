@@ -24,7 +24,7 @@ Park.prototype.removeDinosaur = function(dinosaur){
 }
 Park.prototype.findTopDino = function(){
     let topDino = null;
-    for(let dinosaur of this.dinosuars){
+    for(const dinosaur of this.dinosuars){
         if(topDino === null){
             topDino = dinosaur;
         }
@@ -35,6 +35,15 @@ Park.prototype.findTopDino = function(){
         }
     }
     return topDino;
+}
+Park.prototype.findDinoByType = function(dinoType){
+    let dinosOfType = [];
+    for(const dinosaur of this.dinosuars){
+        if(dinosaur.diet === dinoType){
+            dinosOfType.push(dinosaur);
+        }
+    }
+    return dinosOfType;
 }
 
 module.exports = Park;
